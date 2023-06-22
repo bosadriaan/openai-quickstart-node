@@ -70,7 +70,25 @@
   cursor: pointer;
   width: 100px;
   margin-bottom: 10px;
+
+  /* Add these lines for the transition effect */
+  transition: all 0.2s ease;
 }
+
+.main button:hover {
+  /* This will change the background color and text color when the button is hovered */
+  background-color: #2a579a;
+  color: #fff;
+}
+
+.main button:active {
+  /* This will change the color, size, and add a box-shadow when the button is clicked */
+  background-color: #15406a;
+  transform: scale(0.95);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+
 
 .main .field {
   width: 100%;
