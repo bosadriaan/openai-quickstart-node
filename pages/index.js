@@ -14,12 +14,12 @@ export default function Home() {
   useEffect(() => {
     setGameState(
   `Here are the current details: 
-    current position   x: ${position.x}, y: ${position.y}
-    previous position   x: ${previousPosition.x}, y: ${previousPosition.y}
-    field size  width: ${fieldSize.width}, height: ${fieldSize.height}
-    logo size  width: ${logoSize.width}, height: ${logoSize.height}
+    current position       x: ${position.x}, y: ${position.y}
+    previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
+    screen size                  width: ${fieldSize.width}, height: ${fieldSize.height}
+    logo size                       width: ${logoSize.width}, height: ${logoSize.height}
   
- 0, 0 is the top left of the screen. Determine the new position as: 'x:##, y:##.`
+0, 0 is the top left of the screen. Determine the new position as: 'x:##, y:##'.`
     );
   }, [position, previousPosition, fieldSize, logoSize]);
 
@@ -113,7 +113,7 @@ export default function Home() {
         <textarea 
           value={userExplanation} 
           onChange={e => setUserExplanation(e.target.value)} 
-          placeholder="Enter your explanation for the AI here"
+          placeholder="Enter additional explanation for the AI here"
         />
         <textarea 
           value={gameState} 
