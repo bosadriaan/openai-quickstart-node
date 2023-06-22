@@ -103,4 +103,20 @@
   margin-top: 15px;
   width: 80%;
   height: 130px;
+
+}
+
+.highlight {
+  background-color: #ffff80; /* Set the desired highlight color */
+  transition: background-color 0.5s; /* Adjust the transition duration as needed */
+}
+
+.main .aiResponse p.highlight {
+  background-color: #aeb1ff;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.main .aiResponse p.title {
+  text-align: center;
 }

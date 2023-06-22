@@ -10,6 +10,7 @@ export default function Home() {
   const [aiResponse, setAiResponse] = useState("");
   const [userExplanation, setUserExplanation] = useState("");
   const [gameState, setGameState] = useState("");
+  const [highlightResponse, setHighlightResponse] = useState(false);
 
   // Function to reset the values to the initial state
   const resetValues = () => {
@@ -56,6 +57,7 @@ export default function Home() {
 
       // Parse the AI's response
       setAiResponse(data.result);
+
       const resultString = data.result;
 
       let matches = [...resultString.matchAll(/\bx:\s*(\d+),\s*y:\s*(\d+)\b/g)];
@@ -69,6 +71,12 @@ export default function Home() {
           x: newX !== undefined ? newX : position.x,
           y: newY !== undefined ? newY : position.y,
         });
+      }
+
+      // Trigger the highlighting effect after a new response is rendered
+      if (data.result) {
+        setHighlightResponse(true);
+        setTimeout(() => setHighlightResponse(false), 1000); // Adjust the timeout duration as needed
       }
     } catch (error) {
       console.error(error);
@@ -127,7 +135,7 @@ export default function Home() {
 
         <div style={{ display: "flex", gap: "10px" }}>
           <button onClick={onSubmit}>Move Logo</button>
-          <button onClick={resetValues}>Reset</button>
+          <button onClick={resetValues}>Reset Logo</button>
         </div>
 
         <div className={styles.field} style={fieldStyle}>
@@ -135,7 +143,9 @@ export default function Home() {
           <img src="/logo.png" style={currentLogoStyle} />
         </div>
         <div className={styles.aiResponse}>
-          <p>AI Response:</p>
+        <p className={`${highlightResponse ? styles.highlight : ""} ${styles.title}`}>
+            AI Response:
+          </p>
           <p>{aiResponse}</p>
         </div>
       </main>
