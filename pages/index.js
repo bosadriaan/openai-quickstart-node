@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [position, setPosition] = useState({ x: 100, y: 130 });
-  const [previousPosition, setPreviousPosition] = useState({ x: 90, y: 120 });
+  const [position, setPosition] = useState({ x: 190, y: 130 });
+  const [previousPosition, setPreviousPosition] = useState({ x: 180, y: 120 });
   const fieldSize = { width: 300, height: 200 };
   const logoSize = { width: 50, height: 50 };
   const [aiResponse, setAiResponse] = useState("");
@@ -13,8 +13,8 @@ export default function Home() {
 
   // Function to reset the values to the initial state
   const resetValues = () => {
-    setPosition({ x: 100, y: 130 });
-    setPreviousPosition({ x: 90, y: 120 });
+    setPosition({ x: 190, y: 130 });
+    setPreviousPosition({ x: 180, y: 120 });
   };
 
   useEffect(() => {
