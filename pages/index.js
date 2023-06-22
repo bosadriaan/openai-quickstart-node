@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     setGameState(
-  `0, 0 is the top left of the screen. Determine the next position as: 'x:##, y:##'.
+      `0, 0 is the top left of the screen. Determine the next position as: 'x:##, y:##'.
 
   current position       x: ${position.x}, y: ${position.y}
   previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
@@ -48,18 +48,21 @@ export default function Home() {
       const data = await response.json();
 
       if (response.status !== 200) {
-        throw data.error || new Error(`Request failed with status ${response.status}`);
+        throw (
+          data.error ||
+          new Error(`Request failed with status ${response.status}`)
+        );
       }
 
       // Parse the AI's response
       setAiResponse(data.result);
       const resultString = data.result;
-      
+
       let matches = [...resultString.matchAll(/\bx:\s*(\d+),\s*y:\s*(\d+)\b/g)];
       let lastMatch = matches[matches.length - 1];
       if (lastMatch) {
         let [newX, newY] = lastMatch.slice(1).map(Number);
-        
+
         // Update the state
         setPreviousPosition(position);
         setPosition({
@@ -67,7 +70,6 @@ export default function Home() {
           y: newY !== undefined ? newY : position.y,
         });
       }
-      
     } catch (error) {
       console.error(error);
       alert(error.message);
@@ -116,20 +118,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>DVD screensaver by AI</h1>
-        <textarea 
-          value={gameState} 
-          readOnly
-        />
-        <textarea 
-          value={userExplanation} 
-          onChange={e => setUserExplanation(e.target.value)} 
+        <textarea value={gameState} readOnly />
+        <textarea
+          value={userExplanation}
+          onChange={(e) => setUserExplanation(e.target.value)}
           placeholder="Enter additional instructions for the AI here"
         />
 
-        
         <div style={{ display: "flex", gap: "10px" }}>
-        <button onClick={onSubmit}>Move Logo</button>
-        <button onClick={resetValues}>Reset</button>
+          <button onClick={onSubmit}>Move Logo</button>
+          <button onClick={resetValues}>Reset</button>
         </div>
 
         <div className={styles.field} style={fieldStyle}>

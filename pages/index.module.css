@@ -1,6 +1,7 @@
 @font-face {
   font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2) format("woff2"),
+  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
+      format("woff2"),
     url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
   font-weight: normal;
   font-style: normal;
@@ -14,7 +15,6 @@
   font-style: normal;
 }
 
-
 .main,
 .main input,
 .main textarea {
@@ -24,17 +24,14 @@
   font-family: "ColfaxAI", Helvetica, sans-serif;
   width: 90%;
   justify-content: center;
-  
 }
 
 .main {
-  
   display: flex;
   flex-direction: column;
-   align-items: center;
-    padding-top: 10px;
-    margin: 0 auto 10px auto; 
-  
+  align-items: center;
+  padding-top: 10px;
+  margin: 0 auto 10px auto;
 }
 
 .main h1 {
@@ -52,12 +49,11 @@
   margin-bottom: 15px;
   margin-top: 0px;
   outline-color: #10a37f;
-  
 }
 
 .main textarea:first-of-type {
   height: 125px; /* Set the desired height for the first input field */
-  resize: none; 
+  resize: none;
 }
 
 .main textarea:last-of-type {
@@ -96,10 +92,7 @@
   background-color: #15406a;
   transform: scale(0.95);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  
 }
-
-
 
 .main .field {
   width: 100%;

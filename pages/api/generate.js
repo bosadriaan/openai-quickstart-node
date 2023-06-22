@@ -6,7 +6,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
-  const { position, previousPosition, fieldSize, logoSize, userPrompt } = req.body;
+  const { position, previousPosition, fieldSize, logoSize, userPrompt } =
+    req.body;
 
   try {
     const requestPayload = {
@@ -14,7 +15,8 @@ export default async function (req, res) {
       messages: [
         {
           role: "system",
-          content: "You are an AI model trained to process and respond to human language based on prompts provided to you.",
+          content:
+            "You are an AI model trained to process and respond to human language based on prompts provided to you.",
         },
         {
           role: "user",
