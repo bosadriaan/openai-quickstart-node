@@ -1,0 +1,13 @@
+------------------ bounced one step too late
+
+You are controlling a DVD logo screensaver that displays a logo moving across the screen, bouncing off the sides whenever it has reached one. 
+
+consider the following steps for both the horizontal x direction and the vertical y direction.
+
+1. calculate the logo change in position by subtracting the previous value from the current value.
+2. calculate the next position by adding the change to the current value.
+3. ONLY if any of the logo sides would go out of the screen size, multiply the change by -1 so the direction is reversed.
+4 If the side doesnt go outside of the screen, calculate the new position by adding the change to the current position.
+
+
+------------------

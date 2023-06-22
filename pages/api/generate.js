@@ -21,7 +21,7 @@ export default async function (req, res) {
           content: userPrompt,
         },
       ],
-      
+      temperature: 0.4,
     };
 
     console.log("OpenAI API New Request:", JSON.stringify(requestPayload));

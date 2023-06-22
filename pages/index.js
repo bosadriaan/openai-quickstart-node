@@ -11,15 +11,21 @@ export default function Home() {
   const [userExplanation, setUserExplanation] = useState("");
   const [gameState, setGameState] = useState("");
 
+  // Function to reset the values to the initial state
+  const resetValues = () => {
+    setPosition({ x: 100, y: 130 });
+    setPreviousPosition({ x: 90, y: 120 });
+  };
+
   useEffect(() => {
     setGameState(
-  `Here are the current details: 
-    current position       x: ${position.x}, y: ${position.y}
-    previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
-    screen size                  width: ${fieldSize.width}, height: ${fieldSize.height}
-    logo size                       width: ${logoSize.width}, height: ${logoSize.height}
-  
-0, 0 is the top left of the screen. Determine the new position as: 'x:##, y:##'.`
+  `0, 0 is the top left of the screen. Determine the next position as: 'x:##, y:##'.
+
+  current position       x: ${position.x}, y: ${position.y}
+  previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
+  screen size                  width: ${fieldSize.width}, height: ${fieldSize.height}
+  logo size                       width: ${logoSize.width}, height: ${logoSize.height}
+  `
     );
   }, [position, previousPosition, fieldSize, logoSize]);
 
@@ -113,13 +119,18 @@ export default function Home() {
         <textarea 
           value={userExplanation} 
           onChange={e => setUserExplanation(e.target.value)} 
-          placeholder="Enter additional explanation for the AI here"
+          placeholder="Enter additional instructions for the AI here"
         />
         <textarea 
           value={gameState} 
           readOnly
         />
+        
+        <div style={{ display: "flex", gap: "10px" }}>
         <button onClick={onSubmit}>Move Logo</button>
+        <button onClick={resetValues}>Reset</button>
+        </div>
+
         <div className={styles.field} style={fieldStyle}>
           <img src="/logo.png" style={previousLogoStyle} />
           <img src="/logo.png" style={currentLogoStyle} />

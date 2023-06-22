@@ -52,7 +52,17 @@
   margin-bottom: 20px;
   margin-top: 4px;
   outline-color: #10a37f;
-  height: 140px; /* 15 lines with 24px line-height */
+  
+}
+
+.main textarea:first-of-type {
+  height: 80px; /* Set the desired height for the first input field */
+  resize: vertical; 
+}
+
+.main textarea:last-of-type {
+  height: 120px; /* Set the desired height for the second input field with permanent text */
+  resize: none;
 }
 
 .main ::placeholder {
@@ -98,4 +108,5 @@
 .main .aiResponse {
   margin-top: 15px;
   width: 80%;
+  height: 130px;
 }
