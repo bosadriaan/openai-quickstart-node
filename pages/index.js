@@ -60,7 +60,7 @@ export default function Home() {
 
       const resultString = data.result;
 
-      let matches = [...resultString.matchAll(/\bx:\s*(\d+),\s*y:\s*(\d+)\b/g)];
+      let matches = [...resultString.matchAll(/\bx:\s*(-?\d+),\s*y:\s*(-?\d+)\b/g)];
       let lastMatch = matches[matches.length - 1];
       if (lastMatch) {
         let [newX, newY] = lastMatch.slice(1).map(Number);
