@@ -24,8 +24,7 @@ export default function Home() {
   current position       x: ${position.x}, y: ${position.y}
   previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
   screen size                  width: ${fieldSize.width}, height: ${fieldSize.height}
-  logo size                       width: ${logoSize.width}, height: ${logoSize.height}
-  `
+  logo size                       width: ${logoSize.width}, height: ${logoSize.height}`
     );
   }, [position, previousPosition, fieldSize, logoSize]);
 
@@ -105,6 +104,7 @@ export default function Home() {
     border: "2px solid black",
     margin: "auto",
     position: "relative",
+    backgroundColor: "#FFF7FE",
   };
 
   return (
@@ -117,14 +117,15 @@ export default function Home() {
       <main className={styles.main}>
         <h1>DVD screensaver by AI</h1>
         <textarea 
+          value={gameState} 
+          readOnly
+        />
+        <textarea 
           value={userExplanation} 
           onChange={e => setUserExplanation(e.target.value)} 
           placeholder="Enter additional instructions for the AI here"
         />
-        <textarea 
-          value={gameState} 
-          readOnly
-        />
+
         
         <div style={{ display: "flex", gap: "10px" }}>
         <button onClick={onSubmit}>Move Logo</button>

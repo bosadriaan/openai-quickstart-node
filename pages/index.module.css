@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
    align-items: center;
-    padding-top: 20px;
+    padding-top: 10px;
     margin: 0 auto 10px auto; 
   
 }
@@ -42,27 +42,27 @@
   line-height: 32px;
   font-weight: bold;
   color: #202123;
-  margin: 16px 0 10px;
+  margin: 6px 0 25px;
 }
 
 .main textarea {
   padding: 12px 16px;
   border: 1px solid #10a37f;
   border-radius: 4px;
-  margin-bottom: 20px;
-  margin-top: 4px;
+  margin-bottom: 15px;
+  margin-top: 0px;
   outline-color: #10a37f;
   
 }
 
 .main textarea:first-of-type {
-  height: 80px; /* Set the desired height for the first input field */
-  resize: vertical; 
+  height: 125px; /* Set the desired height for the first input field */
+  resize: none; 
 }
 
 .main textarea:last-of-type {
-  height: 120px; /* Set the desired height for the second input field with permanent text */
-  resize: none;
+  height: 80px; /* Set the desired height for the second input field with permanent text */
+  resize: vertical;
 }
 
 .main ::placeholder {
@@ -96,6 +96,7 @@
   background-color: #15406a;
   transform: scale(0.95);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  
 }
 
 
