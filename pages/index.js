@@ -22,10 +22,10 @@ export default function Home() {
     setGameState(
       `0, 0 is the top left of the screen. Determine the Next logo position as: 'x:##, y:##'.
 
-  Current position       x: ${position.x}, y: ${position.y}
-  Previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
-  Screen size                  x: ${fieldSize.width}, y: ${fieldSize.height}
-  Logo size                       x: ${logoSize.width}, y: ${logoSize.height}`
+  Current position   x: ${position.x}, y: ${position.y}
+  Previous position   x: ${previousPosition.x}, y: ${previousPosition.y}
+  Screen size   x: ${fieldSize.width}, y: ${fieldSize.height}
+  Logo size   x: ${logoSize.width}, y: ${logoSize.height}`
     );
   }, [position, previousPosition, fieldSize, logoSize]);
 
@@ -111,7 +111,7 @@ export default function Home() {
   const fieldStyle = {
     width: `${fieldSize.width}px`,
     height: `${fieldSize.height}px`,
-    border: "2px solid black",
+    border: "1px solid black",
     margin: "auto",
     position: "relative",
     backgroundColor: "#FFF7FE",
@@ -125,7 +125,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>DVD screensaver by AI</h1>
+        <h2>DVD screensaver by AI</h2>
         <textarea value={gameState} readOnly />
         <textarea
           value={userExplanation}
@@ -143,10 +143,12 @@ export default function Home() {
           <img src="/logo.png" style={currentLogoStyle} />
         </div>
         <div className={styles.aiResponse}>
-        <p className={`${highlightResponse ? styles.highlight : ""} ${styles.title}`}>
+        <h3 className={`${highlightResponse ? styles.highlight : ""} ${styles.title}`}>
             AI Response:
-          </p>
-          <p>{aiResponse}</p>
+          </h3>
+          <p>{aiResponse}<br /><br /><br /></p>
+
+
         </div>
       </main>
     </div>

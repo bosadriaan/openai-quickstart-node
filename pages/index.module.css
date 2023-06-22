@@ -101,9 +101,9 @@
 
 .main .aiResponse {
   margin-top: 15px;
+  margin-bottom: 20px;
   width: 80%;
   height: 130px;
-
 }
 
 .highlight {
@@ -111,12 +111,12 @@
   transition: background-color 0.5s; /* Adjust the transition duration as needed */
 }
 
-.main .aiResponse p.highlight {
+.main .aiResponse h3.highlight {
   background-color: #aeb1ff;
   padding: 0px;
   border-radius: 4px;
 }
 
-.main .aiResponse p.title {
+.main .aiResponse h3.title {
   text-align: center;
 }
