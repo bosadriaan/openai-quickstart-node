@@ -26,11 +26,11 @@ export default async function (req, res) {
       temperature: 0.5,
     };
 
-    console.log("OpenAI API New Request:", JSON.stringify(requestPayload));
+    console.log("\nOpenAI API New Request:", JSON.stringify(requestPayload));
 
     const response = await openai.createChatCompletion(requestPayload);
 
-    // console.log("OpenAI API Response:", JSON.stringify(response.data));
+    console.log("\nOpenAI API Response:", JSON.stringify(response.data));
 
     const result = response.data.choices[0].message.content;
 

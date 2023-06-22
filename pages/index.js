@@ -19,12 +19,12 @@ export default function Home() {
 
   useEffect(() => {
     setGameState(
-      `0, 0 is the top left of the screen. Determine the next position as: 'x:##, y:##'.
+      `0, 0 is the top left of the screen. Determine the Next logo position as: 'x:##, y:##'.
 
-  current position       x: ${position.x}, y: ${position.y}
-  previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
-  screen size                  width: ${fieldSize.width}, height: ${fieldSize.height}
-  logo size                       width: ${logoSize.width}, height: ${logoSize.height}`
+  Current position       x: ${position.x}, y: ${position.y}
+  Previous position    x: ${previousPosition.x}, y: ${previousPosition.y}
+  Screen size                  x: ${fieldSize.width}, y: ${fieldSize.height}
+  Logo size                       x: ${logoSize.width}, y: ${logoSize.height}`
     );
   }, [position, previousPosition, fieldSize, logoSize]);
 
