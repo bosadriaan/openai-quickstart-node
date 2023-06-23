@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [position, setPosition] = useState({ x: 190, y: 130 });
+  const [position, setPosition] = useState({ x: 100, y: 80 });
   const [previousPosition, setPreviousPosition] = useState({
-    x: 180,
-    y: 120,
+    x: 90,
+    y: 70,
   });
-  const fieldSize = { width: 300, height: 200 };
+  const fieldSize = { width: 200, height: 150 };
   const logoSize = { width: 50, height: 50 };
   const [aiResponse, setAiResponse] = useState("");
   const [userExplanation, setUserExplanation] = useState("");
@@ -19,8 +19,8 @@ export default function Home() {
 
   // Function to reset the values to the initial state
   const resetValues = () => {
-    setPosition({ x: 190, y: 130 });
-    setPreviousPosition({ x: 180, y: 120 });
+    setPosition({ x: 100, y: 80 });
+    setPreviousPosition({ x: 90, y: 70 });
   };
 
   useEffect(() => {
