@@ -133,7 +133,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h2>DVD screensaver by AI</h2>
+        <div style={{ display: "flex", alignItems: "baseline" }}>
+          <h2>DVD screensaver by AI </h2>
+          <span style={{ marginLeft: "10px" }}>v0.10</span>
+        </div>
         <textarea value={gameState} readOnly />
         <textarea
           value={userExplanation}
@@ -151,9 +154,13 @@ export default function Home() {
           <img src="/logo.png" style={currentLogoStyle} />
         </div>
         <div className={styles.aiResponse}>
-        <h3 className={`${highlightResponse ? styles.highlight : ""} ${isError ? styles.errorHighlight : ""} ${styles.title}`}>
-  AI Response:
-</h3>
+          <h3
+            className={`${highlightResponse ? styles.highlight : ""} ${
+              isError ? styles.errorHighlight : ""
+            } ${styles.title}`}
+          >
+            AI Response:
+          </h3>
 
           <p>
             {aiResponse}
