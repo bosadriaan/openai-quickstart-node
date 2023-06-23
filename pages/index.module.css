@@ -1,122 +1,129 @@
 @font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
-      format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
+            format("woff2"),
+        url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff)
+            format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2)
+            format("woff2"),
+        url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
 }
 
 .main,
 .main input,
 .main textarea {
-  font-size: 13px;
-  line-height: 18px;
-  color: #353740;
-  font-family: "ColfaxAI", Helvetica, sans-serif;
-  width: 90%;
-  justify-content: center;
+    font-size: 13px;
+    line-height: 18px;
+    color: #353740;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
+    width: 90%;
+    justify-content: center;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-  margin: 0 auto 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    margin: 0 auto 10px auto;
 }
 
 .main h1 {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: bold;
-  color: #202123;
-  margin: 6px 0 25px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    color: #202123;
+    margin: 6px 0 25px;
 }
 
 .main textarea {
-  padding: 12px 16px;
-  border: 1px solid #10a37f;
-  border-radius: 4px;
-  margin-bottom: 15px;
-  margin-top: 0px;
-  outline-color: #10a37f;
+    padding: 12px 16px;
+    border: 1px solid #10a37f;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    outline-color: #10a37f;
 }
 
 .main textarea:first-of-type {
-  height: 125px; /* Set the desired height for the first input field */
-  resize: none;
+    height: 126px; /* Set the desired height for the first input field */
+    resize: none;
 }
 
 .main textarea:last-of-type {
-  height: 80px; /* Set the desired height for the second input field with permanent text */
-  resize: vertical;
+    height: 80px; /* Set the desired height for the second input field with permanent text */
+    resize: vertical;
 }
 
 .main ::placeholder {
-  color: #8e8ea0;
-  opacity: 1;
+    color: #8e8ea0;
+    opacity: 1;
 }
 
 .main button {
-  padding: 12px 0;
-  color: #fff;
-  background-color: #3a68c4;
-  border: none;
-  border-radius: 4px;
-  text-align: center;
-  cursor: pointer;
-  width: 100px;
-  margin-bottom: 10px;
+    padding: 12px 0;
+    color: #fff;
+    background-color: #3a68c4;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    margin-bottom: 10px;
 
-  /* Add these lines for the transition effect */
-  transition: all 0.2s ease;
+    /* Add these lines for the transition effect */
+    transition: all 0.2s ease;
 }
 
 .main button:hover {
-  /* This will change the background color and text color when the button is hovered */
-  background-color: #2a579a;
-  color: #fff;
+    /* This will change the background color and text color when the button is hovered */
+    background-color: #2a579a;
+    color: #fff;
 }
 
 .main button:active {
-  /* This will change the color, size, and add a box-shadow when the button is clicked */
-  background-color: #15406a;
-  transform: scale(0.95);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    /* This will change the color, size, and add a box-shadow when the button is clicked */
+    background-color: #15406a;
+    transform: scale(0.95);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .main .field {
-  width: 100%;
-  margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .main .aiResponse {
-  margin-top: 15px;
-  margin-bottom: 0px;
-  width: 80%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    width: 80%;
 }
 
 .highlight {
-  background-color: #ffff80; /* Set the desired highlight color */
-  transition: background-color 0.5s; /* Adjust the transition duration as needed */
+    background-color: #ffff80; /* Set the desired highlight color */
+    transition: background-color 0.5s; /* Adjust the transition duration as needed */
+}
+
+.errorHighlight {
+    background-color: #ffcccc; /* adjust this to the light red you prefer */
+    transition: background-color 0.5s; /* Adjust the transition duration as needed */
 }
 
 .main .aiResponse h3.highlight {
-  background-color: #aeb1ff;
-  padding: 0px;
-  border-radius: 4px;
+    background-color: #aeb1ff;
+    padding: 0px;
+    border-radius: 4px;
 }
 
 .main .aiResponse h3.title {
-  text-align: center;
-  margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 0px;
 }

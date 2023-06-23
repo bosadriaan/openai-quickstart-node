@@ -4,13 +4,17 @@ import styles from "./index.module.css";
 
 export default function Home() {
   const [position, setPosition] = useState({ x: 190, y: 130 });
-  const [previousPosition, setPreviousPosition] = useState({ x: 180, y: 120 });
+  const [previousPosition, setPreviousPosition] = useState({
+    x: 180,
+    y: 120,
+  });
   const fieldSize = { width: 300, height: 200 };
   const logoSize = { width: 50, height: 50 };
   const [aiResponse, setAiResponse] = useState("");
   const [userExplanation, setUserExplanation] = useState("");
   const [gameState, setGameState] = useState("");
   const [highlightResponse, setHighlightResponse] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   // Function to reset the values to the initial state
   const resetValues = () => {
@@ -57,10 +61,13 @@ export default function Home() {
 
       // Parse the AI's response
       setAiResponse(data.result);
+      setIsError(false);
 
       const resultString = data.result;
 
-      let matches = [...resultString.matchAll(/\bx:\s*(-?\d+),\s*y:\s*(-?\d+)\b/g)];
+      let matches = [
+        ...resultString.matchAll(/\bx:\s*(-?\d+),\s*y:\s*(-?\d+)\b/g),
+      ];
       let lastMatch = matches[matches.length - 1];
       if (lastMatch) {
         let [newX, newY] = lastMatch.slice(1).map(Number);
@@ -80,7 +87,8 @@ export default function Home() {
       }
     } catch (error) {
       console.error(error);
-      alert(error.message);
+      // alert(error.message);
+      setIsError(true);
     }
   }
 
@@ -143,12 +151,16 @@ export default function Home() {
           <img src="/logo.png" style={currentLogoStyle} />
         </div>
         <div className={styles.aiResponse}>
-        <h3 className={`${highlightResponse ? styles.highlight : ""} ${styles.title}`}>
-            AI Response:
-          </h3>
-          <p>{aiResponse}<br /><br /><br /></p>
+        <h3 className={`${highlightResponse ? styles.highlight : ""} ${isError ? styles.errorHighlight : ""} ${styles.title}`}>
+  AI Response:
+</h3>
 
-
+          <p>
+            {aiResponse}
+            <br />
+            <br />
+            <br />
+          </p>
         </div>
       </main>
     </div>
