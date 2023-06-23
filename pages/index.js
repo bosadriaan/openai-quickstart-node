@@ -15,6 +15,7 @@ export default function Home() {
   const [gameState, setGameState] = useState("");
   const [highlightResponse, setHighlightResponse] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   // Function to reset the values to the initial state
   const resetValues = () => {
@@ -36,6 +37,7 @@ export default function Home() {
   async function onSubmit(event) {
     event.preventDefault();
     try {
+      setIsProcessing(true); // Start the loading indication
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
@@ -89,6 +91,8 @@ export default function Home() {
       console.error(error);
       // alert(error.message);
       setIsError(true);
+    } finally {
+      setIsProcessing(false); // End the loading indication
     }
   }
 
@@ -126,7 +130,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
       <Head>
         <title>AI DVD Logo</title>
         <link rel="icon" href="/favicon.ico" />
@@ -157,7 +161,8 @@ export default function Home() {
           <h3
             className={`${highlightResponse ? styles.highlight : ""} ${
               isError ? styles.errorHighlight : ""
-            } ${styles.title}`}
+            } ${isProcessing ? styles['isProcessing'] : ""}
+            ${styles.title}`}
           >
             AI Response:
           </h3>

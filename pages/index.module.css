@@ -17,6 +17,14 @@
     font-style: normal;
 }
 
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+
+
 .container {
   max-width: 200px; /* or whatever max width you want */
   margin: 0 auto; /* this centers the container if the viewport is wider than the max width */
@@ -133,3 +141,8 @@
     text-align: center;
     margin-bottom: 0px;
 }
+
+.isProcessing {
+  animation: blink 1s linear infinite;
+}
+
