@@ -126,7 +126,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
       <Head>
         <title>AI DVD Logo</title>
         <link rel="icon" href="/favicon.ico" />
@@ -135,7 +135,7 @@ export default function Home() {
       <main className={styles.main}>
         <div style={{ display: "flex", alignItems: "baseline" }}>
           <h2>DVD screensaver by AI </h2>
-          <span style={{ marginLeft: "10px" }}>v0.10</span>
+          <span style={{ marginLeft: "10px" }}>v0.20</span>
         </div>
         <textarea value={gameState} readOnly />
         <textarea

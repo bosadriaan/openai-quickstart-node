@@ -17,6 +17,12 @@
     font-style: normal;
 }
 
+.container {
+  max-width: 200px; /* or whatever max width you want */
+  margin: 0 auto; /* this centers the container if the viewport is wider than the max width */
+}
+
+
 .main,
 .main input,
 .main textarea {
