@@ -45,7 +45,7 @@ export default function Home() {
           previousPosition,
           fieldSize,
           logoSize,
-          userPrompt: userExplanation + gameState,
+          userPrompt:  gameState + userExplanation,
         }),
       });
 
@@ -142,7 +142,7 @@ export default function Home() {
         <textarea
           value={userExplanation}
           onChange={(e) => setUserExplanation(e.target.value)}
-          placeholder="Enter additional instructions for the AI here"
+          placeholder="Enter additional instructions for the AI here. Make the logo bounce off the walls."
         />
 
         <div style={{ display: "flex", gap: "10px" }}>
