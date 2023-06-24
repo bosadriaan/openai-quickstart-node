@@ -136,7 +136,7 @@ export default function Home() {
       <main className={styles.main}>
         <div style={{ display: "flex", alignItems: "baseline" }}>
           <h2>DVD screensaver by AI </h2>
-          <span style={{ marginLeft: "10px" }}>Abo 0.20</span>
+          <span style={{ marginLeft: "10px" }}>Abo 0.30</span>
         </div>
         <textarea value={gameState} readOnly />
         <textarea
