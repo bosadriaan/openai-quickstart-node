@@ -82,7 +82,7 @@ export default function Home() {
       // Trigger the highlighting effect after a new response is rendered
       if (data.result) {
         setHighlightResponse(true);
-        setTimeout(() => setHighlightResponse(false), 1000); // Adjust the timeout duration as needed
+        setTimeout(() => setHighlightResponse(false), 1000); // Adjust the timeout duration 
       }
     } catch (error) {
       console.error(error);
