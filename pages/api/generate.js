@@ -11,6 +11,7 @@ export default async function (req, res) {
 
   try {
     const requestPayload = {
+      // model: "gpt-4-32k-0613",
       model: "gpt-3.5-turbo-0613",
       messages: [
         {
